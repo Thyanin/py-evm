@@ -125,7 +125,7 @@ class BlockHeader(rlp.Serializable):
                  mix_hash: Hash32=ZERO_HASH32,
                  nonce: bytes=GENESIS_NONCE) -> None:
         if timestamp is None:
-            timestamp = int(time.time())
+            timestamp = 0
         super().__init__(
             parent_hash=parent_hash,
             uncles_hash=uncles_hash,
