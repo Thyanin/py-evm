@@ -86,7 +86,7 @@ def generate_header_from_parent_header(
     """
     Generate BlockHeader from state_root and parent_header
     """
-    timestamp = None
+    timestamp = 0
     header = BlockHeader(
         difficulty=compute_difficulty_fn(parent_header, timestamp),
         block_number=(parent_header.block_number + 1),
