@@ -252,7 +252,7 @@ def _get_default_genesis_params(genesis_state: AccountState) -> Iterable[Tuple[s
             pass
         else:
             yield key, value
-    yield 'timestamp', int(time.time())  # populate the timestamp value at runtime
+    yield 'timestamp', 0 # populate the timestamp value at runtime
 
 
 @to_tuple
