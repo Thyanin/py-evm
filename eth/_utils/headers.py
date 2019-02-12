@@ -86,16 +86,7 @@ def generate_header_from_parent_header(
     """
     Generate BlockHeader from state_root and parent_header
     """
-    if timestamp is None:
-        timestamp = max(int(time.time()), parent_header.timestamp + 1)
-    elif timestamp <= parent_header.timestamp:
-        raise ValueError(
-            "header.timestamp ({}) should be higher than"
-            "parent_header.timestamp ({})".format(
-                timestamp,
-                parent_header.timestamp,
-            )
-        )
+    timestamp = 0
     header = BlockHeader(
         difficulty=compute_difficulty_fn(parent_header, timestamp),
         block_number=(parent_header.block_number + 1),
